@@ -44,8 +44,22 @@ h5{
 h6{
     font-size: 20px;
 }
+
 p{
     font-size: 15px;
-    font-weight: 300px;
+    font-weight: 300;
     color: #a6a6a6;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 92px;
+
+    padding-left: 21px;
+    
+    background-color: #CF2B2B;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
