@@ -80,6 +80,7 @@ main{
 .menu{
     display: flex;
     overflow-x: scroll;
+    margin-bottom: 27px;
 }
 
 .product{
@@ -97,7 +98,7 @@ main{
 }
 
 .product img{
-    width: 100%;
+    width: 144px;
     height: 87px;
     border-radius: 4px;
     margin-bottom: 8px;
@@ -123,6 +124,7 @@ main{
 
 .selected{
     border: 5px solid #32B72F;
+    padding: 13px 9px 8px;
 }
 
 .selected ion-icon{
