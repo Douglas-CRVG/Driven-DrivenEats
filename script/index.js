@@ -1,6 +1,21 @@
 let foodSelected = 0;
 let drinkSelected = 0;
 let dessertSelected = 0;
+let total = 0;
+let nameClient = "";
+let endereco = "";
+
+function conclude (){
+    const confirmFood = document.querySelector(".food .selected h4").innerHTML;
+    const confirmDrink = document.querySelector(".drink .selected h4").innerHTML;
+    const confirmDessert = document.querySelector(".dessert .selected h4").innerHTML;
+
+
+    const message = `
+    Olá, gostaria de fazer o pedido:\n- *Prato*: ${confirmFood}\n- *Bebida*: ${confirmDrink}\n- *Sobremesa*: ${confirmDessert}\n*Total*: R$ *${total}*\n\n*Nome*: ${nameClient}\n*Endereço*: ${endereco}`;
+
+    window.location.href = `https://wa.me/5521994114784?text=${encodeURIComponent(message)}`;
+}
 
 function cancel(){
     const checkout = document.querySelector(".checkout-order");
@@ -10,8 +25,8 @@ function cancel(){
 }
 
 function checkOrder(){
-    const name = prompt("Nos diga seu nome");
-    const endereco = prompt ("Agora seu endereço");
+    nameClient = prompt("Nos diga seu nome");
+    endereco = prompt ("Agora seu endereço");
 
     const confirmFood = document.querySelector(".food .selected h4").innerHTML;
     const confirmDrink = document.querySelector(".drink .selected h4").innerHTML;
@@ -22,7 +37,7 @@ function checkOrder(){
     const priceFood = Number(food.replace(",","."));
     const priceDrink = Number(drink.replace(",","."));
     const priceDessert = Number(dessert.replace(",","."));
-    let total = priceFood + priceDrink + priceDessert;
+    total = priceFood + priceDrink + priceDessert;
     total = total.toFixed(2);
     
     const order = document.querySelector(".order");
@@ -47,12 +62,12 @@ function checkOrder(){
         </div>
 
         <div>
-            <p><strong>Nome:</strong> ${name}</p>
+            <p><strong>Nome:</strong> ${nameClient}</p>
             <p><strong>Endereço:</strong> ${endereco}</p>
         </div>
     </div>
     <div>
-        <button>
+        <button onclick="conclude();">
             <p><span>Tudo certo, pode pedir!</span></p>
         </button>
         <button onclick="cancel();">
@@ -77,9 +92,9 @@ function select(selection, item){
     }
     selection.classList.add("selected");
 
-    const contador = foodSelected + drinkSelected + dessertSelected;
+    const activator = foodSelected + drinkSelected + dessertSelected;
 
-    if(contador === 3){
+    if(activator === 3){
         activeButton();
     }
 }
