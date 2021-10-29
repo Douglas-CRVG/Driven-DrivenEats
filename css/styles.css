@@ -174,7 +174,6 @@ button{
 
 .order{
     width: 100%;
-    height: 353px;
     padding: 21px 25px 0;
     background-color: #50D074;
     border-radius: 9px;
@@ -208,6 +207,12 @@ button{
     display: flex;
     justify-content: space-between;
     margin-bottom: 13px;
+}
+
+.order > div > div:nth-child(5){
+    margin-top: 15px;
+    border-top: 2px dashed #ffffff;
+    display: initial;
 }
 
 .order button{
