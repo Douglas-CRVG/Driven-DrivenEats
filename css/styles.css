@@ -75,8 +75,6 @@ main{
     margin: 123px 0px 108px;
 }
 
-.category{}
-
 .menu{
     display: flex;
     overflow-x: scroll;
@@ -102,8 +100,6 @@ main{
     height: 87px;
     border-radius: 4px;
     margin-bottom: 8px;
-
-    background-color: #CF2B2B;
 }
 
 .product > div{
@@ -203,7 +199,6 @@ button{
 }
 
 .order > div > div{
-
     display: flex;
     justify-content: space-between;
     margin-bottom: 13px;

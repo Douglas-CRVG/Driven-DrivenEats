@@ -5,7 +5,7 @@ let total = 0;
 let nameClient = "";
 let endereco = "";
 
-function conclude (){
+function conclude() {
     const confirmFood = document.querySelector(".food .selected h4").innerHTML;
     const confirmDrink = document.querySelector(".drink .selected h4").innerHTML;
     const confirmDessert = document.querySelector(".dessert .selected h4").innerHTML;
@@ -17,16 +17,16 @@ function conclude (){
     window.location.href = `https://wa.me/5521994114784?text=${encodeURIComponent(message)}`;
 }
 
-function cancel(){
+function cancel() {
     const checkout = document.querySelector(".checkout-order");
     checkout.classList.add("hidden");
     const order = document.querySelector(".order");
     order.innerHTML = ``;
 }
 
-function checkOrder(){
+function checkOrder() {
     nameClient = prompt("Nos diga seu nome");
-    endereco = prompt ("Agora seu endereço");
+    endereco = prompt("Agora seu endereço");
 
     const confirmFood = document.querySelector(".food .selected h4").innerHTML;
     const confirmDrink = document.querySelector(".drink .selected h4").innerHTML;
@@ -34,12 +34,12 @@ function checkOrder(){
     const food = document.querySelector(".food .selected strong").innerHTML;
     const drink = document.querySelector(".drink .selected strong").innerHTML;
     const dessert = document.querySelector(".dessert .selected strong").innerHTML;
-    const priceFood = Number(food.replace(",","."));
-    const priceDrink = Number(drink.replace(",","."));
-    const priceDessert = Number(dessert.replace(",","."));
+    const priceFood = Number(food.replace(",", "."));
+    const priceDrink = Number(drink.replace(",", "."));
+    const priceDessert = Number(dessert.replace(",", "."));
     total = priceFood + priceDrink + priceDessert;
     total = total.toFixed(2);
-    
+
     const order = document.querySelector(".order");
     order.innerHTML = `
     <p><strong>Confirme seu pedido</strong></p>
@@ -58,7 +58,7 @@ function checkOrder(){
         </div>
         <div>
             <p><strong>TOTAL</strong></p>
-            <p><strong>${total.replace(".",",")}</strong></p>
+            <p><strong>${total.replace(".", ",")}</strong></p>
         </div>
 
         <div>
@@ -79,22 +79,22 @@ function checkOrder(){
     checkout.classList.remove("hidden");
 }
 
-function activeButton(){
+function activeButton() {
     const button = document.querySelector("footer");
-    button.innerHTML=`<button class="fechar-pedido" onclick="checkOrder();">
+    button.innerHTML = `<button class="fechar-pedido" onclick="checkOrder();">
         <h6>Fechar Pedido</h6>
     </button>`;
 }
 
-function select(selection, item){
-    if (item !== null){
+function select(selection, item) {
+    if (item !== null) {
         item.classList.remove("selected");
     }
     selection.classList.add("selected");
 
     const activator = foodSelected + drinkSelected + dessertSelected;
 
-    if(activator === 3){
+    if (activator === 3) {
         activeButton();
     }
 }
